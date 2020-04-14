@@ -84,16 +84,16 @@ helpKitties = function () {
         helpers.resource_max('gold') / helpers.cost.trade.gold
     );
 
-    if (helpOptions.trade_nagas
-        && helpers.resource_ratio('catpower') > 0.9
-        && helpers.resource_ratio('gold') > caravan_count * helpers.cost.trade.gold
-        && helpers.resource('ivory') > caravan_count * helpers.cost.trade.ivory) {
-        helpers.trade_all('Nagas');
-    } else if (helpOptions.trade_lizards
+    if (helpOptions.trade_lizards
         && helpers.resource_ratio('catpower') > 0.99
         && helpers.resource('gold') > caravan_count * helpers.cost.trade.gold
         && helpers.resource('minerals') > caravan_count * helpers.cost.trade.minerals) {
         helpers.trade_all('Lizards');
+    } else if (helpOptions.trade_nagas
+        && helpers.resource_ratio('catpower') > 0.9
+        && helpers.resource('gold') > caravan_count * helpers.cost.trade.gold
+        && helpers.resource('ivory') > caravan_count * helpers.cost.trade.ivory) {
+        helpers.trade_all('Nagas');
     } else if (helpOptions.send_hunters && helpers.resource_ratio('catpower') > 0.9) {
         helpers.send_hunters();
     }
